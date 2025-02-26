@@ -1,0 +1,5 @@
+.section data
+mensajes: .string "hola mundo\'n"
+
+.section text
+.globl
