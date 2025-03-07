@@ -1,11 +1,20 @@
-.section data
-mensajes: .string "hola mundo\n"
+.data
+mensaje: .string "hola mundo\n"
 
-.section text
-.globl _start
+.text
+.global _start    #Hacemos a el procedimiento _start publico
 
 _start:
+         #Aqui empieza el codigo de la aplicacion
+        mov $1, %rax           # rax=1
+        mov $1, %rdi           # rdi=1
+        mov $mensaje, %rsi     # rsi=direccion donde inicia el mensaje
+        mov $11, %rdx          # rdx=11
+        syscall                # llamamos sistema
 
+        mov $60, %rax          # rax=60
+        xor %rdi, %rdi         # rdi=rdi ( xor) rdi
+        syscall                # llamamos al sistema
 
 
 
