@@ -1,0 +1,28 @@
+
+.data
+
+mensaje: .asciz "Numero1 %d numero2 %d \r\n"
+
+.text
+.global _start
+.glabal main
+.extern printf          #similar al include
+
+main:
+_start:
+
+    subq $8, %rsp       #Alineamos datos
+
+    mov $4, %rax
+    mov $5, %rbx
+
+    #               %rdi             %rsi  %rcx
+    # printf(mensaje, rax, rbx)
+    # printf("Numero1 %d numero2 %d ", rax, rbx)
+
+    mov $mensaje, %rdi  #guarda la direccion de memoria de mensaje
+    mov %rax, %rsi 
+    mov %rbx, $rcx
+
+    xor %rax, %rax  
+

@@ -1,0 +1,23 @@
+
+.data
+
+mensaje: .asciz  "Numero1 %d numero2 %d \r\n"
+
+.text
+.global _start
+.global main
+.extern printf  #simil al #include<stdio.h>
+
+main:
+_start
+
+    subq %8,%rsp    # Alineamos los datos
+
+    mov  $4, %rax
+    mov  $5, %rbx
+
+    #                %rd1              rsi  
+    # printf("Numero1 %d numero2 %d ", rax, rbx)
+
+    mov $mensaje, %rdi #guarda la direccion de mensaje
+    mov 
